@@ -91,11 +91,11 @@ def ejecutar_interpolacion() -> None:
         print("\n  No fue posible evaluar f(x) en ese punto para comparar.")
         return
 
-    error_absoluto = abs(exacto - aproximado)
+    error_absoluto = (abs(exacto - aproximado))*100
     print(f"\n  Valor exacto f({x}) = {exacto}")
-    print(f"  Error absoluto = |exacto - aproximado| = {error_absoluto}")
+    print(f"  Error absoluto = |exacto - aproximado| = {error_absoluto:.2f}%")
     if exacto != 0:
-        print(f"  Error relativo = {error_absoluto / abs(exacto)}")
+        print(f"  Error relativo = {(error_absoluto / abs(exacto)):.2f}%")
     if x < x0 or x > x1:
         print(
             f"  Nota: x = {x} queda fuera del intervalo [{x0}, {x1}], "
